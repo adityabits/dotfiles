@@ -2,7 +2,7 @@ set nocompatible
 :imap jk <Esc>
 set autoindent
 colorscheme desert
-set lines=38 columns=150
+"set lines=38 columns=150
 no <down> <Nop>
 no <up> <Nop>
 no <left> <Nop>
@@ -22,9 +22,17 @@ nnoremap ; :
 nnoremap <S-k> :tabn<CR>
 nnoremap <S-j> :tabp<CR>
 nnoremap <S-t> :tabnew<CR>
-inoremap <c-x> jk:w<CR>
-nnoremap <c-x> :w<CR>
+inoremap <c-v> <esc>pa
+" going around splits
+nnoremap <c-h> <c-w>h
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-l> <c-w>l
 
+" goto file opens new buffer
+map gf <c-w>f
+
+nnoremap <leader>s  :Scratch<cr>
 " folding
 nnoremap <space> za
 
@@ -32,6 +40,7 @@ nnoremap <space> za
 let mapleader=","
 set mouse= 
 set relativenumber
+
 " tabs
 set tabstop=4
 set shiftwidth=4
@@ -39,17 +48,22 @@ set smarttab
 set expandtab
 
 " loading and saving views (for folds)
-:au BufWinLeave ?* mkview
-:au BufWinEnter ?* silent loadview
+augroup view_save
+    autocmd!
+    :au BufWinLeave ?* mkview
+    :au BufWinEnter ?* silent loadview
+augroup END
 
 " editing and sourcing .gvimrc file
 noremap <leader>ev :vsplit $MYGVIMRC<cr>
 noremap <leader>sv :source $MYGVIMRC<cr>
+
 set sessionoptions-=options
-"execute pathogen#infect()
-call pathogen#infect()
+"call pathogen#infect()
 syntax on
 filetype off
 filetype plugin indent on
 filetype on
 
+autocmd BufRead *.java set makeprg=ant\ -f\ build.xml 
+autocmd BufRead *.java set efm=%A\ %#[javac]\ %f:%l:\ %m,%-Z\ %#[javac]\ %p^,%-C%.%#
