@@ -41,8 +41,8 @@ set mouse=
 set relativenumber
 
 " key bindings for plugins
-nnoremap <leader>n :NERDTree
-nnoremap <leader>t :TagbarToggle
+nnoremap <leader>n :NERDTree<cr>
+nnoremap <leader>t :TagbarToggle<cr>
 nnoremap <leader>s  :Scratch<cr>
 
 " tabs
