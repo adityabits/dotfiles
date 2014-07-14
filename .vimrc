@@ -32,7 +32,6 @@ nnoremap <c-l> <c-w>l
 " goto file opens new buffer
 map gf <c-w>f
 
-nnoremap <leader>s  :Scratch<cr>
 " folding
 nnoremap <space> za
 
@@ -40,6 +39,11 @@ nnoremap <space> za
 let mapleader=","
 set mouse= 
 set relativenumber
+
+" key bindings for plugins
+nnoremap <leader>n :NERDTree
+nnoremap <leader>t :TagbarToggle
+nnoremap <leader>s  :Scratch<cr>
 
 " tabs
 set tabstop=4
@@ -55,11 +59,11 @@ augroup view_save
 augroup END
 
 " editing and sourcing .gvimrc file
-noremap <leader>ev :vsplit $MYGVIMRC<cr>
-noremap <leader>sv :source $MYGVIMRC<cr>
+noremap <leader>ev :vsplit $MYVIMRC<cr>
+noremap <leader>sv :source $MYVIMRC<cr>
 
 set sessionoptions-=options
-"call pathogen#infect()
+call pathogen#infect()
 syntax on
 filetype off
 filetype plugin indent on
