@@ -2,7 +2,7 @@ set nocompatible
 :imap jk <Esc>
 set autoindent
 colorscheme desert
-"set lines=38 columns=150
+set lines=90 columns=160
 no <down> <Nop>
 no <up> <Nop>
 no <left> <Nop>
@@ -28,9 +28,11 @@ nnoremap <c-h> <c-w>h
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-l> <c-w>l
+" open current split in new tab
+nnoremap <c-t> :tabe %<CR>:tabp<CR>:q<CR>:tabn<CR>
 
-" goto file opens new buffer
-map gf <c-w>f
+" goto file opens new tab
+map gf <c-w>gf
 
 " folding
 nnoremap <space> za
@@ -48,8 +50,12 @@ nnoremap <leader>s  :Scratch<cr>
 " tabs
 set tabstop=4
 set shiftwidth=4
-set smarttab
+"set smarttab
 set expandtab
+
+" smooth scroll
+:nnoremap <S-u> <S-h>kkkkkkkkkkkkkkkkkkkkkkkkk
+:nnoremap <S-d> <S-l>jjjjjjjjjjjjjjjjjjjjjjjjj
 
 " loading and saving views (for folds)
 augroup view_save

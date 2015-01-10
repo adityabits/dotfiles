@@ -28,6 +28,8 @@ nnoremap <c-h> <c-w>h
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-l> <c-w>l
+" open current split in new tab
+nnoremap <c-t> :tabe %<CR>:tabp<CR>:q<CR>:tabn<CR>
 
 " goto file opens new buffer
 map gf <c-w>f
@@ -50,6 +52,10 @@ set tabstop=4
 set shiftwidth=4
 set smarttab
 set expandtab
+
+" smooth scroll
+:nnoremap <S-u> <S-h>kkkkkkkkkkkkkkkkkkkkkkkkk
+:nnoremap <S-d> <S-l>jjjjjjjjjjjjjjjjjjjjjjjjj
 
 " loading and saving views (for folds)
 augroup view_save
