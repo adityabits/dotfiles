@@ -2,6 +2,7 @@ set nocompatible
 :imap jk <Esc>
 set autoindent
 colorscheme desert
+set noswapfile
 set lines=90 columns=160
 no <down> <Nop>
 no <up> <Nop>
