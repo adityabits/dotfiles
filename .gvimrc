@@ -13,11 +13,6 @@ no <right> <Nop>
 nnoremap j gj
 nnoremap k gk
 
-ino <down> <Nop>
-ino <up> <Nop>
-ino <left> <Nop>
-ino <right> <Nop>
-
 nnoremap : ;
 nnoremap ; :
 nnoremap <S-k> :tabn<CR>
@@ -40,8 +35,6 @@ nnoremap <space> za
 
 
 let mapleader=","
-set mouse= 
-set relativenumber
 
 " key bindings for plugins
 nnoremap <leader>n :NERDTree<cr>
