@@ -2,6 +2,7 @@ set nocompatible
 :imap jk <Esc>
 set autoindent
 colorscheme desert
+set noswapfile
 "set lines=38 columns=150
 no <down> <Nop>
 no <up> <Nop>
@@ -77,3 +78,6 @@ filetype on
 
 autocmd BufRead *.java set makeprg=ant\ -f\ build.xml 
 autocmd BufRead *.java set efm=%A\ %#[javac]\ %f:%l:\ %m,%-Z\ %#[javac]\ %p^,%-C%.%#
+
+" prevent bad NerdTree behaviour on Stanford corn
+let g:NERDTreeDirArrows=0

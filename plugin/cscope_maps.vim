@@ -27,9 +27,7 @@
 " This tests to see if vim was configured with the '--enable-cscope' option
 " when it was compiled.  If it wasn't, time to recompile vim... 
 if has("cscope")
-
     """"""""""""" Standard cscope/vim boilerplate
-
     " use both cscope and ctag for 'ctrl-]', ':ta', and 'vim -t'
     set cscopetag
 
@@ -88,14 +86,14 @@ if has("cscope")
     " go back to where you were before the search.  
     "
 
-    nmap <C-\>s :cs find s <C-R>=expand("<cword>")<CR><CR>	
-    nmap <C-\>g :cs find g <C-R>=expand("<cword>")<CR><CR>	
-    nmap <C-\>c :cs find c <C-R>=expand("<cword>")<CR><CR>	
-    nmap <C-\>t :cs find t <C-R>=expand("<cword>")<CR><CR>	
-    nmap <C-\>e :cs find e <C-R>=expand("<cword>")<CR><CR>	
-    nmap <C-\>f :cs find f <C-R>=expand("<cfile>")<CR><CR>	
-    nmap <C-\>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
-    nmap <C-\>d :cs find d <C-R>=expand("<cword>")<CR><CR>	
+    nnoremap <C-\>s :cs find s <C-R>=expand("<cword>")<CR><CR>	
+    nnoremap <C-\>g :cs find g <C-R>=expand("<cword>")<CR><CR>	
+    nnoremap <C-\>c :cs find c <C-R>=expand("<cword>")<CR><CR>	
+    nnoremap <C-\>t :cs find t <C-R>=expand("<cword>")<CR><CR>	
+    nnoremap <C-\>e :cs find e <C-R>=expand("<cword>")<CR><CR>	
+    nnoremap <C-\>f :cs find f <C-R>=expand("<cfile>")<CR><CR>	
+    nnoremap <C-\>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+    nnoremap <C-\>d :cs find d <C-R>=expand("<cword>")<CR><CR>	
 
 
     " Using 'CTRL-spacebar' (intepreted as CTRL-@ by vim) then a search type
@@ -104,16 +102,16 @@ if has("cscope")
     "
     " (Note: earlier versions of vim may not have the :scs command, but it
     " can be simulated roughly via:
-    "    nmap <C-@>s <C-W><C-S> :cs find s <C-R>=expand("<cword>")<CR><CR>	
+    "    nnoremap <C-@>s <C-W><C-S> :cs find s <C-R>=expand("<cword>")<CR><CR>	
 
-    nmap <C-@>s :scs find s <C-R>=expand("<cword>")<CR><CR>	
-    nmap <C-@>g :scs find g <C-R>=expand("<cword>")<CR><CR>	
-    nmap <C-@>c :scs find c <C-R>=expand("<cword>")<CR><CR>	
-    nmap <C-@>t :scs find t <C-R>=expand("<cword>")<CR><CR>	
-    nmap <C-@>e :scs find e <C-R>=expand("<cword>")<CR><CR>	
-    nmap <C-@>f :scs find f <C-R>=expand("<cfile>")<CR><CR>	
-    nmap <C-@>i :scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>	
-    nmap <C-@>d :scs find d <C-R>=expand("<cword>")<CR><CR>	
+    nnoremap <C-@>s :scs find s <C-R>=expand("<cword>")<CR><CR>	
+    nnoremap <C-@>g :scs find g <C-R>=expand("<cword>")<CR><CR>	
+    nnoremap <C-@>c :scs find c <C-R>=expand("<cword>")<CR><CR>	
+    nnoremap <C-@>t :scs find t <C-R>=expand("<cword>")<CR><CR>	
+    nnoremap <C-@>e :scs find e <C-R>=expand("<cword>")<CR><CR>	
+    nnoremap <C-@>f :scs find f <C-R>=expand("<cfile>")<CR><CR>	
+    nnoremap <C-@>i :scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>	
+    nnoremap <C-@>d :scs find d <C-R>=expand("<cword>")<CR><CR>	
 
 
     " Hitting CTRL-space *twice* before the search type does a vertical 
@@ -122,14 +120,14 @@ if has("cscope")
     " (Note: you may wish to put a 'set splitright' in your .vimrc
     " if you prefer the new window on the right instead of the left
 
-    nmap <C-@><C-@>s :vert scs find s <C-R>=expand("<cword>")<CR><CR>
-    nmap <C-@><C-@>g :vert scs find g <C-R>=expand("<cword>")<CR><CR>
-    nmap <C-@><C-@>c :vert scs find c <C-R>=expand("<cword>")<CR><CR>
-    nmap <C-@><C-@>t :vert scs find t <C-R>=expand("<cword>")<CR><CR>
-    nmap <C-@><C-@>e :vert scs find e <C-R>=expand("<cword>")<CR><CR>
-    nmap <C-@><C-@>f :vert scs find f <C-R>=expand("<cfile>")<CR><CR>	
-    nmap <C-@><C-@>i :vert scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>	
-    nmap <C-@><C-@>d :vert scs find d <C-R>=expand("<cword>")<CR><CR>
+    nnoremap <C-@><C-@>s :vert scs find s <C-R>=expand("<cword>")<CR><CR>
+    nnoremap <C-@><C-@>g :vert scs find g <C-R>=expand("<cword>")<CR><CR>
+    nnoremap <C-@><C-@>c :vert scs find c <C-R>=expand("<cword>")<CR><CR>
+    nnoremap <C-@><C-@>t :vert scs find t <C-R>=expand("<cword>")<CR><CR>
+    nnoremap <C-@><C-@>e :vert scs find e <C-R>=expand("<cword>")<CR><CR>
+    nnoremap <C-@><C-@>f :vert scs find f <C-R>=expand("<cfile>")<CR><CR>	
+    nnoremap <C-@><C-@>i :vert scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>	
+    nnoremap <C-@><C-@>d :vert scs find d <C-R>=expand("<cword>")<CR><CR>
 
 
     """"""""""""" key map timeouts
@@ -143,7 +141,7 @@ if has("cscope")
     " Or, you can keep timeouts, by uncommenting the timeoutlen line below,
     " with your own personal favorite value (in milliseconds):
     "
-    "set timeoutlen=4000
+    set timeoutlen=4000
     "
     " Either way, since mapping timeout settings by default also set the
     " timeouts for multicharacter 'keys codes' (like <F1>), you should also
