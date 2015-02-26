@@ -20,10 +20,17 @@ ino <right> <Nop>
 
 nnoremap : ;
 nnoremap ; :
-nnoremap <S-k> :tabn<CR>
-nnoremap <S-j> :tabp<CR>
-nnoremap <S-t> :tabnew<CR>
-inoremap <c-v> <esc>pa
+" Use Shift hj keys for buffers, not tabs
+nnoremap <S-k> :bn<CR>
+nnoremap <S-j> :bp<CR>
+nnoremap <S-x> :bd<CR>:bn<CR>
+nnoremap <S-t> :e<CR>
+
+"nnoremap <S-k> :tabn<CR>
+"nnoremap <S-j> :tabp<CR>
+"nnoremap <S-t> :tabnew<CR>
+"inoremap <c-v> <esc>pa
+"
 " going around splits
 nnoremap <c-h> <c-w>h
 nnoremap <c-j> <c-w>j
@@ -40,17 +47,19 @@ nnoremap <space> za
 
 
 let mapleader=","
-set mouse= 
 set relativenumber
 
 " key bindings for plugins
 nnoremap <leader>n :NERDTree<cr>
 nnoremap <leader>t :TagbarToggle<cr>
 nnoremap <leader>s  :Scratch<cr>
+" FuzzyFinder bindings
+nnoremap <leader>b :FufBuffer<CR>
+nnoremap <leader>f :FufFile<CR>
 
 " tabs
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set smarttab
 set expandtab
 
@@ -81,3 +90,9 @@ autocmd BufRead *.java set efm=%A\ %#[javac]\ %f:%l:\ %m,%-Z\ %#[javac]\ %p^,%-C
 
 " prevent bad NerdTree behaviour on Stanford corn
 let g:NERDTreeDirArrows=0
+
+" Enable the list of buffers
+let g:airline#extensions#tabline#enabled = 1
+" Show just the filename
+let g:airline#extensions#tabline#fnamemod = ':t'
+set hidden
