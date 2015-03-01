@@ -3,29 +3,25 @@ set nocompatible
 set autoindent
 colorscheme desert
 set noswapfile
-"set lines=38 columns=150
-no <down> <Nop>
-no <up> <Nop>
-no <left> <Nop>
-no <right> <Nop>
+"set lines=90 columns=150
 
 " move up and down using screen lines
 nnoremap j gj
 nnoremap k gk
+set mouse=
 
 nnoremap : ;
 nnoremap ; :
 " Use Shift hj keys for buffers, not tabs
-nnoremap <S-k> :bn<CR>
-nnoremap <S-j> :bp<CR>
-nnoremap <S-x> :bd<CR>:bn<CR>
-nnoremap <S-t> :e<CR>
+"nnoremap <S-k> :bn<CR>
+"nnoremap <S-j> :bp<CR>
+"nnoremap <S-x> :bd<CR>:bn<CR>
+"nnoremap <S-t> :e<CR>
 
-"nnoremap <S-k> :tabn<CR>
-"nnoremap <S-j> :tabp<CR>
-"nnoremap <S-t> :tabnew<CR>
-"inoremap <c-v> <esc>pa
-"
+nnoremap <S-k> :tabn<CR>
+nnoremap <S-j> :tabp<CR>
+nnoremap <S-t> :tabnew<CR>
+inoremap <c-v> <esc>pa
 " going around splits
 nnoremap <c-h> <c-w>h
 nnoremap <c-j> <c-w>j
@@ -34,8 +30,6 @@ nnoremap <c-l> <c-w>l
 " open current split in new tab
 nnoremap <c-t> :tabe %<CR>:tabp<CR>:q<CR>:tabn<CR>
 
-" goto file opens new buffer
-map gf <c-w>f
 
 " folding
 nnoremap <space> za
@@ -54,7 +48,7 @@ nnoremap <leader>f :FufFile<CR>
 " tabs
 set tabstop=2
 set shiftwidth=2
-set smarttab
+"set smarttab
 set expandtab
 
 " smooth scroll
@@ -89,4 +83,6 @@ let g:NERDTreeDirArrows=0
 let g:airline#extensions#tabline#enabled = 1
 " Show just the filename
 let g:airline#extensions#tabline#fnamemod = ':t'
+" For airline to show without having to open a new split
+set laststatus=2
 set hidden
