@@ -13,14 +13,14 @@ set mouse=
 nnoremap : ;
 nnoremap ; :
 " Use Shift hj keys for buffers, not tabs
-"nnoremap <S-k> :bn<CR>
-"nnoremap <S-j> :bp<CR>
-"nnoremap <S-x> :bd<CR>:bn<CR>
-"nnoremap <S-t> :e<CR>
+nnoremap <S-k> :bn<CR>
+nnoremap <S-j> :bp<CR>
+nnoremap <S-x> :bp<CR>:bd #<CR>
+nnoremap <S-t> :e<CR>
 
-nnoremap <S-k> :tabn<CR>
-nnoremap <S-j> :tabp<CR>
-nnoremap <S-t> :tabnew<CR>
+"nnoremap <S-k> :tabn<CR>
+"nnoremap <S-j> :tabp<CR>
+"nnoremap <S-t> :tabnew<CR>
 inoremap <c-v> <esc>pa
 " going around splits
 nnoremap <c-h> <c-w>h
@@ -86,3 +86,6 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 " For airline to show without having to open a new split
 set laststatus=2
 set hidden
+
+
+
