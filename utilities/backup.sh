@@ -68,6 +68,10 @@ if [ $# -ne 3 ]; then
   echo "Illegal number of arguments"
 fi
 
+if ! [ -e $3 ]; then
+  mkdir $3
+fi
+
 case $1 in
   -a)
     backup_add $2 $3;;
