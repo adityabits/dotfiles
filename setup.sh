@@ -2,6 +2,8 @@
 
 files=( .vimrc .gvimrc .vim utilities .bashrc )
 
+git submodule update --init --recursive
+
 # backup
 mkdir ~/backup
 for file in ${files[@]}; do
